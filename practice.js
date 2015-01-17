@@ -312,6 +312,7 @@ Loop through your devMountainEmployees until you find cahlan, then remove him fr
   Array.prototype.removeByName = function(name) {
     for (var i = 0; i < this.length; i++) {
       if (this[i].name === name) this.splice(i,1);
+      i--; //fix indexing
     }
     return this;
   };

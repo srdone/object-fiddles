@@ -128,11 +128,20 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
   //Code Here
+  var album = {
+    iHateSongs: 3.33,
+    iLoveSongs: 1.001,
+    iDontCare: 100,
+    why: 0.1,
+    oops: "sing"
+  };
 
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
-
+  for (var key in album) {
+    console.log(key);
+  }
 
 
 

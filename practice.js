@@ -360,7 +360,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
-  var users = {};
+  var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -381,10 +381,14 @@ var user2 = {
 };
 
 var user3 = {
-  name: 'Fred Fli'
-}
+  name: 'Fred Flintstone',
+  email: 'freddy@gmail.com',
+  password: 'yabbadabbadoo',
+  username: 'barney'
+};
 
 //Your Code Here
+users.push(user1, user2, user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -395,6 +399,26 @@ objects until you find Tyler's account (use tylermcginnis33@gmail.com to find hi
 Once you find the particular indice he's located in, delete him from the array.*/
 
   //Code Here
+  var removeUser = function(email) {
+    //another test - does this work on any array with email objects?
+    //again - probably not best practice
+    for (var i = 0; i < this.length; i++) {
+      if(this[i].email === email) {
+        this.splice(i,1);
+        //breaking the loop after we delet (so we only delete one match)
+        return this;
+      }
+    }
+    return this;
+  };
+
+  //attach the above method to users
+  users.removeUser = removeUser;
+
+  //notice that now our method is listed on the object
+  console.log(users);
+  users.removeUser('tylermcginnis33@gmail.com');
+  console.log(users);
 
 //The activity we just did is very much how data works in 'the real world'.
 

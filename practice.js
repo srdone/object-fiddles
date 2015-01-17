@@ -153,12 +153,20 @@ Instead, console.log your whole backPack object and then check out the console. 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
   //Code Here
+  var states = {
+    Utah: 3,
+    Arizona: 3,
+    Canada: 0,
+    Cali: 1000,
+    NewMexico: 30001
+  };
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
-
-
+  for (var key in states) {
+    if (states[key] > 30000) console.log(key);
+  }
 
 
 //NEXT PROBLEM
@@ -173,18 +181,22 @@ var user = {
     birthday: undefined,
     username: 'tylermcginnis33',
     age: 0
-}
+};
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
+  for (var key in user) {
+    if(!user[key]) delete user[key];
+  }
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
   //Code Here
+  user.name = "Stephen";
+  user.username = "srdone";
 
-
-
+  console.log(user);
 
 //NEXT PROBLEM
 
@@ -199,18 +211,20 @@ var user = {
         birthday: '05/02/1990',
         username: 'tylermcginnis33',
         sayName: function(){
-            alert('Email is : ' + this.email);
+            return 'Email is : ' + this.email;
         }
 };
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
   //Code Here
+  user.name = "Tyler S. McGinnis";
+  user.email = "tyler.mcginnis@devmounta.in";
 
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
-
+  console.log(user.sayName());
 
 
 

@@ -303,6 +303,12 @@ sure that it's equal to 4. */
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
+  //Assumes that we have an array of objects with name properties.
+  //We really shouldn't add it to the array prototype
+  //Instead we should add this to the prototype for the object
+  //If we want it in the prototype in the first place
+  //This is just fun practice to see what is possible
+  //Bad, bad, bad - don't do it exactly this way in real systems - this can't operate on all arrays.
   Array.prototype.removeByName = function(name) {
     for (var i = 0; i < this.length; i++) {
       if (this[i].name === name) this.splice(i,1);
@@ -354,6 +360,7 @@ of Data is to have an Array full of objects. */
 //Create an empty array called users.
 
   //Code Here
+  var users = {};
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -364,6 +371,17 @@ var user1 = {
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
+};
+
+var user2 = {
+    name: 'Stephen Done',
+    email: 'myfakeemail@gmail.com',
+    password: 'ohdddear',
+    username: 'hah'
+};
+
+var user3 = {
+  name: 'Fred Fli'
 }
 
 //Your Code Here
